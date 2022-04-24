@@ -1,3 +1,7 @@
+'''
+Note: To run this test file, need to run the flask app first.
+'''
+
 import json
 
 import pytest
