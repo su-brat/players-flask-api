@@ -83,7 +83,7 @@ API endpoints:
    }
    ```
 3. `country/max-lefties`\
-   Request patterns:
+    Request patterns:
    1. `http://localhost:5000/country/max-lefties`\
       Response:
    ```
@@ -94,3 +94,12 @@ API endpoints:
       ]
    }
    ```
+
+Pytest files:
+
+```
+test_features.py
+test_api.py
+```
+
+**Note:** Run `test_api.py` test file only while running the flask app.
