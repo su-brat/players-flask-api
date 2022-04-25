@@ -20,7 +20,7 @@ def test_api_players():
     assert len(res_dict['players']) == df.shape[0]
 
 
-# GET /players?born-after
+# GET /players?born-after=value
 @pytest.mark.parametrize('year', [1991, 2000])
 def test_api_born_after(year):
     response = request.urlopen(f'{BASE_URL}/players?born-after={year}')
@@ -68,9 +68,11 @@ def test_api_players_in_country(country):
     assert not has_country
 
 
-# GET /players/average-age
-def test_api_average_age():
-    response = request.urlopen(f'{BASE_URL}/players/average-age')
+# GET /players/average-age?country=value
+@pytest.mark.parametrize('country', ['Australia', 'Nigeria', 'None'])
+def test_api_average_age(country):
+    response = request.urlopen(
+        f'{BASE_URL}/players/average-age?country={country}')
     res_dict = json.loads(response.read().decode('utf-8'))
     print(res_dict)
     assert 'average-age' in res_dict

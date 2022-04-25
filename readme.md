@@ -82,6 +82,14 @@ API endpoints:
       "average-age": 36
    }
    ```
+   2. `http://localhost:5000/players/average-age?country=Australia`\
+      Response:
+   ```
+   {
+      "average-age": 39,
+      "country": "Australia"
+   }
+   ```
 3. `country/max-lefties`\
     Request patterns:
    1. `http://localhost:5000/country/max-lefties`\
